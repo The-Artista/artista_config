@@ -1,6 +1,7 @@
+
 import 'package:flutter/material.dart';
 
-MaterialColor _createMaterialColor(Color color) {
+MaterialColor createMaterialColor(Color color) {
   final strengths = <double>[.05];
   final swatch = <int, Color>{};
   final r = color.red;
@@ -21,26 +22,6 @@ MaterialColor _createMaterialColor(Color color) {
   }
   return MaterialColor(color.value, swatch);
 }
-
-class ArtistaColor {
-  ArtistaColor();
-
-  static MaterialColor primary = _createMaterialColor(const Color(0xFF097D5D));
-  static MaterialColor warning = _createMaterialColor(const Color(0xFFF39F1D));
-  static MaterialColor danger = _createMaterialColor(const Color(0xFFD40022));
-  static MaterialColor success = _createMaterialColor(const Color(0xFF37AD57));
-  static MaterialColor info = _createMaterialColor(const Color(0xFF0758CE));
-  static MaterialColor disable = _createMaterialColor(const Color(0xFFE5E6EA));
-  static MaterialColor secondary = _createMaterialColor(Colors.white);
-  static MaterialColor text = _createMaterialColor(const Color(0xFF2D2D2D));
-
-  static const backgroundColor = Color(0xFF1A1313);
-  static const disableText = Color(0xFF838699);
-  static const infoShade20 = Color(0xFFCEE6FC);
-  
-  
-}
-
 class InverseBW {
   double _calculateLuminance(List<int> rgb) {
     return 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
