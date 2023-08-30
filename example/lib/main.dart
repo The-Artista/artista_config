@@ -100,31 +100,57 @@ class _MyHomePageState extends State<MyHomePage> {
           style: TextStyle(color: context.artistaColors!.success),
         ),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+          children: [
+            Text(
+              'Label small',
+              style: TextStyle(fontSize: 11,letterSpacing: 1),
             ),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              'Body small/Label medium/',
+              style: TextStyle(fontSize: 12, letterSpacing: .75),
+            ),
+            Text(
+              'Body medium	(base)/Label large',
+              style: TextStyle(fontSize: 14,letterSpacing: .50),
+            ),
+            Text(
+              'Body large/Title small',
+              style: TextStyle(fontSize: 16,letterSpacing: .50),
+            ),
+            Text(
+              'Title medium',
+              style: TextStyle(fontSize: 18,letterSpacing: .25),
+            ),
+            Text(
+              '	Title large',
+              style: TextStyle(fontSize: 22,letterSpacing: 0),
+            ),
+            Text(
+              'Headline small	',
+              style: TextStyle(fontSize: 24,letterSpacing: -0.25,height: 1.25),
+            ),
+            Text(
+              'Headline medium	',
+              style: TextStyle(fontSize: 27,letterSpacing: -0.50),
+            ),
+            Text(
+              'Headline large	',
+              style: TextStyle(fontSize: 30,letterSpacing: -0.75),
+            ),
+            Text(
+              'Display small	',
+              style: TextStyle(fontSize: 34,letterSpacing: -1),
+            ),
+            Text(
+              'Display medium	',
+              style: TextStyle(fontSize: 38,letterSpacing: -1.25),
+            ),
+            Text(
+              'Display large	',
+              style: TextStyle(fontSize: 43,letterSpacing: -1.50,),
             ),
           ],
         ),

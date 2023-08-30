@@ -2,24 +2,22 @@ import 'package:flutter/material.dart';
 
 class TypographyRole {
   TypographyRole({
-     this.bodyLarge,
-     this.bodyMedium,
-     this.headlineSmall,
-     this.bodySmall,
-     this.displayLarge,
-     this.displayMedium,
-     this.displaySmall,
-     this.headlineLarge,
-     this.headlineMedium,
-     this.labelLarge,
-     this.labelMedium,
-     this.labelSmall,
-     this.titleLarge,
-     this.titleMedium,
-     this.titleSmall,
-  }){
-
-  }
+    this.bodyLarge,
+    this.bodyMedium,
+    this.headlineSmall,
+    this.bodySmall,
+    this.displayLarge,
+    this.displayMedium,
+    this.displaySmall,
+    this.headlineLarge,
+    this.headlineMedium,
+    this.labelLarge,
+    this.labelMedium,
+    this.labelSmall,
+    this.titleLarge,
+    this.titleMedium,
+    this.titleSmall,
+  }) {}
 
   TypographyRoleProperty? displayLarge;
   TypographyRoleProperty? displayMedium;
@@ -62,4 +60,21 @@ class TypographyRoleProperty {
   final MaterialColor color;
   final FontWeight fontWeight;
   final int lineHeight;
+}
+
+class TypograpyConfig {
+  TypograpyConfig({
+    this.fontRatio = 1.25,
+    this.lineHeightRatio = 1.5,
+    this.fontFamily = 'Roboto',
+    this.fontColor = Colors.black,
+  }) {
+    typographyRole = TypographyRole();
+  }
+
+  double? fontRatio;
+  double? lineHeightRatio;
+  String? fontFamily;
+  Color? fontColor;
+  TypographyRole? typographyRole;
 }
