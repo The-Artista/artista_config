@@ -87,6 +87,19 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
 
     final ddgg = getArtistaConfig<ArtistaConfig>();
+    /*print(ddgg.config.typograpy?.typographyRole?.labelSmall?.fontSize);
+    print(ddgg.config.typograpy?.typographyRole?.bodySmall?.fontSize);
+    print(ddgg.config.typograpy?.typographyRole?.bodyMedium?.fontSize);
+    print(ddgg.config.typograpy?.typographyRole?.bodyLarge?.fontSize);
+    print(ddgg.config.typograpy?.typographyRole?.titleMedium?.fontSize);
+    print(ddgg.config.typograpy?.typographyRole?.titleLarge?.fontSize);
+    print(ddgg.config.typograpy?.typographyRole?.headlineSmall?.fontSize);
+    print(ddgg.config.typograpy?.typographyRole?.headlineMedium?.fontSize);
+    print(ddgg.config.typograpy?.typographyRole?.headlineLarge?.fontSize);
+    print(ddgg.config.typograpy?.typographyRole?.displaySmall?.fontSize);*/
+    print(ddgg.config.typograpy?.typographyRole?.displayMedium?.fontSize);
+    print(ddgg.config.typograpy?.typographyRole?.displayLarge?.fontSize);
+
     return Scaffold(
       appBar: AppBar(
         // TRY THIS: Try changing the color here to a specific color (to
@@ -106,51 +119,51 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Text(
               'Label small',
-              style: TextStyle(fontSize: 11,letterSpacing: 1),
+              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.labelSmall?.fontSize,letterSpacing: 1,height: 1.618,fontWeight: FontWeight.w500),
             ),
             Text(
               'Body small/Label medium/',
-              style: TextStyle(fontSize: 12, letterSpacing: .75),
+              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.bodySmall?.fontSize, letterSpacing: .75,height: 1.618),
             ),
             Text(
               'Body medium	(base)/Label large',
-              style: TextStyle(fontSize: 14,letterSpacing: .50),
+              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.bodyMedium?.fontSize,letterSpacing: .50,height: 1.618),
             ),
             Text(
               'Body large/Title small',
-              style: TextStyle(fontSize: 16,letterSpacing: .50),
+              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.bodyLarge?.fontSize,letterSpacing: .50,height: 1.618),
             ),
             Text(
               'Title medium',
-              style: TextStyle(fontSize: 18,letterSpacing: .25),
+              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.titleMedium?.fontSize,letterSpacing: .25,height: 1.618),
             ),
             Text(
               '	Title large',
-              style: TextStyle(fontSize: 22,letterSpacing: 0),
+              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.titleLarge?.fontSize,letterSpacing: 0,height: 1.618),
             ),
             Text(
               'Headline small	',
-              style: TextStyle(fontSize: 24,letterSpacing: -0.25,height: 1.25),
+              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.headlineSmall?.fontSize,letterSpacing: -0.25,height: 1.33),
             ),
             Text(
               'Headline medium	',
-              style: TextStyle(fontSize: 27,letterSpacing: -0.50),
+              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.headlineMedium?.fontSize,letterSpacing: -0.50,height: 1.33),
             ),
             Text(
               'Headline large	',
-              style: TextStyle(fontSize: 30,letterSpacing: -0.75),
+              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.headlineLarge?.fontSize,letterSpacing: -0.75,height: 1.33),
             ),
             Text(
               'Display small	',
-              style: TextStyle(fontSize: 34,letterSpacing: -1),
+              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.displaySmall?.fontSize,letterSpacing: -1,height: 1.33),
             ),
             Text(
               'Display medium	',
-              style: TextStyle(fontSize: 38,letterSpacing: -1.25),
+              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.displayMedium?.fontSize,letterSpacing: -1.25,height: 1.33),
             ),
             Text(
               'Display large	',
-              style: TextStyle(fontSize: 43,letterSpacing: -1.50,),
+              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.displayLarge?.fontSize,letterSpacing: -1.50,height: 1.33),
             ),
           ],
         ),

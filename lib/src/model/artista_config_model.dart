@@ -6,7 +6,6 @@ class ArtistaConfigModel {
     colors ??= ArtistaColorModel();
     typograpy ??= TypograpyConfig();
   }
-
   ArtistaColorModel? colors;
   TypograpyConfig? typograpy;
 }
