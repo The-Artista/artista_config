@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
     final gg = getArtistaConfig<ArtistaConfig>();
     gg.setConfig(ArtistaConfigModel(
       colors: ArtistaColorModel(danger: Colors.brown),
+      spacing: SpacinConfig(baseUnit: 12)
     ));
     return MaterialApp(
       title: 'fdg',
@@ -120,6 +121,9 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'Label small',
               style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.labelSmall?.fontSize,letterSpacing: 1,height: 1.618,fontWeight: FontWeight.w500),
+            ),
+            SizedBox(
+              height: ddgg.config.spacing!.$8xl,
             ),
             Text(
               'Body small/Label medium/',
