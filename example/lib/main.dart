@@ -15,11 +15,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final gg = getArtistaConfig<ArtistaConfig>();
+    final gg = artista<ArtistaConfig>();
     gg.setConfig(ArtistaConfigModel(
       colors: ArtistaColorModel(danger: Colors.brown),
-      spacing: SpacinConfig(baseUnit: 12)
+      spacing: SpacinConfig(baseUnit: 12),
+      typograpy: TypograpyConfig(
+        fontColor: Colors.red,
+        baseFont: 11,
+        lineHeightRatio: 1.2
+      ),
     ));
+
+    final fddf = InverseBW();
     return MaterialApp(
       title: 'fdg',
       theme: ThemeData(
@@ -38,7 +45,8 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: gg.config.colors!.warning!.shade50),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: gg.config.colors!.warning!.shade50),
         useMaterial3: true,
       ),
       home: MyHomePage(title: 'd'),
@@ -87,8 +95,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
 
-    final ddgg = getArtistaConfig<ArtistaConfig>();
-    /*print(ddgg.config.typograpy?.typographyRole?.labelSmall?.fontSize);
+    final ddgg = artista<ArtistaConfig>();
+    print(ddgg.config.typograpy?.typographyRole?.labelSmall?.fontSize);
     print(ddgg.config.typograpy?.typographyRole?.bodySmall?.fontSize);
     print(ddgg.config.typograpy?.typographyRole?.bodyMedium?.fontSize);
     print(ddgg.config.typograpy?.typographyRole?.bodyLarge?.fontSize);
@@ -97,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
     print(ddgg.config.typograpy?.typographyRole?.headlineSmall?.fontSize);
     print(ddgg.config.typograpy?.typographyRole?.headlineMedium?.fontSize);
     print(ddgg.config.typograpy?.typographyRole?.headlineLarge?.fontSize);
-    print(ddgg.config.typograpy?.typographyRole?.displaySmall?.fontSize);*/
+    print(ddgg.config.typograpy?.typographyRole?.displaySmall?.fontSize);
     print(ddgg.config.typograpy?.typographyRole?.displayMedium?.fontSize);
     print(ddgg.config.typograpy?.typographyRole?.displayLarge?.fontSize);
 
@@ -111,65 +119,116 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(
           'dfgdf',
-          style: TextStyle(color: context.artistaColors!.success),
+          style: TextStyle(color: ddgg.config.colors?.success),
         ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Text(
-              'Label small',
-              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.labelSmall?.fontSize,letterSpacing: 1,height: 1.618,fontWeight: FontWeight.w500),
-            ),
-            SizedBox(
-              height: ddgg.config.spacing!.$8xl,
-            ),
-            Text(
-              'Body small/Label medium/',
-              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.bodySmall?.fontSize, letterSpacing: .75,height: 1.618),
-            ),
-            Text(
-              'Body medium	(base)/Label large',
-              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.bodyMedium?.fontSize,letterSpacing: .50,height: 1.618),
-            ),
-            Text(
-              'Body large/Title small',
-              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.bodyLarge?.fontSize,letterSpacing: .50,height: 1.618),
-            ),
-            Text(
-              'Title medium',
-              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.titleMedium?.fontSize,letterSpacing: .25,height: 1.618),
-            ),
-            Text(
-              '	Title large',
-              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.titleLarge?.fontSize,letterSpacing: 0,height: 1.618),
-            ),
-            Text(
-              'Headline small	',
-              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.headlineSmall?.fontSize,letterSpacing: -0.25,height: 1.33),
-            ),
-            Text(
-              'Headline medium	',
-              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.headlineMedium?.fontSize,letterSpacing: -0.50,height: 1.33),
-            ),
-            Text(
-              'Headline large	',
-              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.headlineLarge?.fontSize,letterSpacing: -0.75,height: 1.33),
-            ),
-            Text(
-              'Display small	',
-              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.displaySmall?.fontSize,letterSpacing: -1,height: 1.33),
-            ),
-            Text(
-              'Display medium	',
-              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.displayMedium?.fontSize,letterSpacing: -1.25,height: 1.33),
-            ),
-            Text(
-              'Display large	',
-              style: TextStyle(fontSize: ddgg.config.typograpy?.typographyRole?.displayLarge?.fontSize,letterSpacing: -1.50,height: 1.33),
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Text(
+                'Label small',
+                style: TextStyle(
+                    fontSize: ddgg
+                        .config.typograpy?.typographyRole?.labelSmall?.fontSize,
+                    letterSpacing: 1,
+                    height: 1.618,
+                    fontWeight: FontWeight.w500),
+              ),
+              SizedBox(
+                height: ddgg.config.spacing!.sm,
+              ),
+              Text(
+                'Body small/Label medium/',
+                style: TextStyle(
+                    fontSize: ddgg
+                        .config.typograpy?.typographyRole?.bodySmall?.fontSize,
+                    letterSpacing: .75,
+                    height: 1.618),
+              ),
+              Text(
+                'Body medium	(base)/Label large',
+                style: TextStyle(
+                    fontSize: ddgg
+                        .config.typograpy?.typographyRole?.bodyMedium?.fontSize,
+                    letterSpacing: .50,
+                    height: 1.618),
+              ),
+              Text(
+                'Body large/Title small',
+                style: TextStyle(
+                    fontSize: ddgg
+                        .config.typograpy?.typographyRole?.bodyLarge?.fontSize,
+                    letterSpacing: .50,
+                    height: 1.618),
+              ),
+              Text(
+                'Title medium',
+                style: TextStyle(
+                    fontSize: ddgg
+                        .config.typograpy?.typographyRole?.titleMedium?.fontSize,
+                    letterSpacing: .25,
+                    height: 1.618),
+              ),
+              Text(
+                '	Title large',
+                style: TextStyle(
+                    fontSize: ddgg
+                        .config.typograpy?.typographyRole?.titleLarge?.fontSize,
+                    letterSpacing: 0,
+                    height: 1.618),
+              ),
+              Text(
+                'Headline small	',
+                style: TextStyle(
+                    fontSize: ddgg.config.typograpy?.typographyRole?.headlineSmall
+                        ?.fontSize,
+                    letterSpacing: -0.25,
+                    height: 1.33),
+              ),
+              Text(
+                'Headline medium	',
+                style: TextStyle(
+                    fontSize: ddgg.config.typograpy?.typographyRole
+                        ?.headlineMedium?.fontSize,
+                    letterSpacing: -0.50,
+                    height: 1.33),
+              ),
+              Text(
+                'Headline large	',
+                style: TextStyle(
+                    fontSize: ddgg.config.typograpy?.typographyRole?.headlineLarge
+                        ?.fontSize,
+                    letterSpacing: -0.75,
+                    height: 1.33),
+              ),
+              Text(
+                'Display small	',
+                style: TextStyle(
+                    fontSize: ddgg
+                        .config.typograpy?.typographyRole?.displaySmall?.fontSize,
+                    letterSpacing: -1,
+                    height: 1.33),
+              ),
+              Text(
+                'Display medium	',
+                style: TextStyle(
+                    fontSize: ddgg.config.typograpy?.typographyRole?.displayMedium
+                        ?.fontSize,
+                    letterSpacing: -1.25,
+                    height: 1.33),
+              ),
+              Text(
+                'Display large	',
+                style: TextStyle(
+                    fontSize: ddgg
+                        .config.typograpy?.typographyRole?.displayLarge?.fontSize,
+                    letterSpacing: -1.50,
+                    height: 1.33),
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
